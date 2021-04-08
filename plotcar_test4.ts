@@ -294,7 +294,42 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         }
         break;
     }
- 
+
+    /*  バックラッシュの処理　左車輪 */ 
+    if (PremotionR == R_zengo){ 
+    for (let index = 0; index < 4; index++) {
+    let Data1=0;
+    while ( Data1 < 4){
+      pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
+      pins.digitalWritePin(DigitalPin.P4, Stepping_R[Data1][1]);
+      pins.digitalWritePin(DigitalPin.P6, Stepping_R[Data1][2]);
+      pins.digitalWritePin(DigitalPin.P7, Stepping_R[Data1][3]);
+      Data1=Data1+1;
+      for (i = 0; i < microbit_wait; i++);
+      {
+      }
+      }
+    }
+    }
+
+
+    /*  バックラッシュの処理　左車輪 */ 
+    if (PremotionL == L_zengo){ 
+    for (let index = 0; index < 4; index++) {
+    let Data1=0;
+    while ( Data1 < 4){
+      pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
+      pins.digitalWritePin(DigitalPin.P14, Stepping_L[Data1][1]);
+      pins.digitalWritePin(DigitalPin.P15, Stepping_L[Data1][2]);
+      pins.digitalWritePin(DigitalPin.P16, Stepping_L[Data1][3]);
+      Data1=Data1+1;
+      for (i = 0; i < microbit_wait; i++);
+      {
+      }
+      }
+    }
+    }
+
     　　　
     /*  整数部の処理　 */ 
     for (let index = 0; index < kyori_seisuu; index++) {
