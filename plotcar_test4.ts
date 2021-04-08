@@ -164,7 +164,7 @@ namespace eureka_plotter_car {
   export function microbit_version_info(Version_info : microbit_version) {
     switch(Version_info){
         case microbit_version.Version1:
-        microbit_wait=900;
+        microbit_wait=700;
         break;
         case microbit_version.Version2:
         microbit_wait=5000;
@@ -297,7 +297,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
     /*  バックラッシュの処理　左車輪 */ 
     if (PremotionR != R_zengo){ 
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 4; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
@@ -315,7 +315,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
     /*  バックラッシュの処理　左車輪 */ 
     if (PremotionL != L_zengo){ 
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 4; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
