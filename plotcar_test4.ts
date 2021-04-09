@@ -4,7 +4,7 @@ let Tugi_L=0;
 let T1=0;
 let  PremotionR=0 ;
 let  PremotionL=0 ;
-let con_kaiten=1.616;
+let con_kaiten=1.6;
 
 
 enum pen_onoff {
@@ -212,13 +212,12 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     if (PremotionL < L_zengo ){ 
         Tugi_L=3-Tugi_L+1;
     }
-    serial.writeValue("2Tugi_L", Tugi_L);
+
 
    /*   次のステップ*/ 
     Tugi_L=(Tugi_L)%4;
     Tugi_R=(Tugi_R)%4;
-
-    serial.writeValue("3Tugi_L", Tugi_L);    
+ 
     /*右ステッピングの処理*/
     switch (R_zengo) {
       case 0:
@@ -295,7 +294,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         break;
     }
 
-    /*  バックラッシュの処理　左車輪 */ 
+    /*  バックラッシュの処理　右車輪 */ 
     if (PremotionR != R_zengo){ 
     for (let index = 0; index < 4; index++) {
     let Data1=0;
@@ -372,11 +371,10 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     
         Tugi_L=(Tugi_L + Data1-1)%4; 
         Tugi_R = (Tugi_R + Data1-1)%4;
-    serial.writeValue("step_number", Step_number);
+
     PremotionR = R_zengo;
     PremotionL = L_zengo;
-/*    serial.writeValue("PromotionL", L_zengo);
-    serial.writeValue("L_zengo", L_zengo);*/
+
 }
 
   //% color="#ff3d03" weight=90 blockId=auto_led_off block="ﾏｲｸﾛﾋﾞｯﾄのLEDを |%Matrix_LED| にする" group="1 初期設定"
