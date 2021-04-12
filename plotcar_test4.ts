@@ -167,7 +167,7 @@ namespace eureka_plotter_car {
         microbit_wait=800;
         break;
         case microbit_version.Version2:
-        microbit_wait=4500;
+        microbit_wait=4000;
         break;
         case microbit_version.Test_A:
         microbit_wait=10000;
