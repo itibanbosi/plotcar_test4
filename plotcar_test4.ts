@@ -299,14 +299,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     music.playTone(988, music.beat(BeatFraction.Half));
     for (let index = 0; index < 3; index++) {
     let Data1=0;
-    while ( Data1 < 4){
+    while ( Data1 < 5){
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P4, Stepping_R[Data1][1]);
       pins.digitalWritePin(DigitalPin.P6, Stepping_R[Data1][2]);
       pins.digitalWritePin(DigitalPin.P7, Stepping_R[Data1][3]);
       Data1=Data1+1;
 /*      for (i = 0; i < microbit_wait; i++);*/
-        for (i = 0; i < 100000; i++);
+        for (i = 0; i < 50000; i++);
       {
       }
       }
@@ -320,14 +320,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
  /*   music.playTone(523, music.beat(BeatFraction.Sixteenth))*/
     for (let index = 0; index < 3; index++) {
     let Data1=0;
-    while ( Data1 < 4){
+    while ( Data1 < 5){
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
       pins.digitalWritePin(DigitalPin.P14, Stepping_L[Data1][1]);
       pins.digitalWritePin(DigitalPin.P15, Stepping_L[Data1][2]);
       pins.digitalWritePin(DigitalPin.P16, Stepping_L[Data1][3]);
       Data1=Data1+1;
 /*      for (i = 0; i < microbit_wait; i++);*/
-        for (i = 0; i < 100000; i++);
+        for (i = 0; i < 50000; i++);
       {
       }
       }
