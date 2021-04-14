@@ -306,7 +306,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       pins.digitalWritePin(DigitalPin.P7, Stepping_R[Data1][3]);
       Data1=Data1+1;
 /*      for (i = 0; i < microbit_wait; i++);*/
-        for (i = 0; i < 10000; i++);
+        for (i = 0; i < 100000; i++);
       {
       }
       }
@@ -327,7 +327,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       pins.digitalWritePin(DigitalPin.P16, Stepping_L[Data1][3]);
       Data1=Data1+1;
 /*      for (i = 0; i < microbit_wait; i++);*/
-        for (i = 0; i < 10000; i++);
+        for (i = 0; i < 100000; i++);
       {
       }
       }
