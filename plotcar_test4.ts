@@ -38,7 +38,7 @@ enum microbit_version {
 
 let cond_Distance=1;
 let cond_degree=1;
-let microbit_wait=700;
+let microbit_wait=600;
 
 let Stepping = [
   [0,0,0,0],
