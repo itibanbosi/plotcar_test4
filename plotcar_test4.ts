@@ -297,7 +297,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*  バックラッシュの処理　右車輪 */ 
     if (PremotionR != R_zengo){ 
     music.playTone(988, music.beat(BeatFraction.Half));
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 5; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
@@ -318,7 +318,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     if (PremotionL != L_zengo){ 
     music.playTone(523, music.beat(BeatFraction.Half));
  /*   music.playTone(523, music.beat(BeatFraction.Sixteenth))*/
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 5; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
