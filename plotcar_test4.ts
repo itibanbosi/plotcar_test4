@@ -38,7 +38,7 @@ enum microbit_version {
 
 let cond_Distance=1;
 let cond_degree=1;
-let microbit_wait=600;
+let microbit_wait=750;
 
 let Stepping = [
   [0,0,0,0],
@@ -164,7 +164,7 @@ namespace eureka_plotter_car {
   export function microbit_version_info(Version_info : microbit_version) {
     switch(Version_info){
         case microbit_version.Version1:
-        microbit_wait=600;
+        microbit_wait=750;
         break;
         case microbit_version.Version2:
         microbit_wait=4000;
