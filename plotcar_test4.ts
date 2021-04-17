@@ -162,7 +162,9 @@ namespace eureka_plotter_car {
 
   //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
   export function microbit_version_info(Version_info : microbit_version) {
-      led.enable(false);
+    led.enable(false);
+    pins.digitalWritePin(DigitalPin.P3, 1);
+    pins.digitalWritePin(DigitalPin.P13, 1);
     switch(Version_info){
         case microbit_version.Version1:
         microbit_wait=750;
