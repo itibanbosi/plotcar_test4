@@ -338,9 +338,10 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*  整数部の処理　 */ 
     for (let index = 0; index < kyori_seisuu; index++) {
     let Data1=0;
+    let pin = DigitalPin.P3
     while ( Data1 < 4){
 
-      pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
+      pins.digitalWritePin(pin, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
       pins.digitalWritePin(DigitalPin.P4, Stepping_R[Data1][1]);
       pins.digitalWritePin(DigitalPin.P14, Stepping_L[Data1][1]);
