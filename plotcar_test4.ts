@@ -167,7 +167,7 @@ namespace eureka_plotter_car {
     pins.digitalWritePin(DigitalPin.P13, 1);
     switch(Version_info){
         case microbit_version.Version1:
-        microbit_wait=600;
+        microbit_wait=750;
         break;
         case microbit_version.Version2:
         microbit_wait=3300;
