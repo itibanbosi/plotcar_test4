@@ -1,3 +1,5 @@
+/* plot_car Ver1.7 */
+
 let wait = 0;
 let  Tugi_R=0;
 let Tugi_L=0;
@@ -15,6 +17,13 @@ enum plotter_houkou {
     前,
     後,
     }
+
+enum plotter_RL{
+    右,
+    左,
+    }
+
+
 enum onoff {
   無効,
   有効,
@@ -407,35 +416,37 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
   }
 
-  //% color="#3943c6" weight=80　blockId=plottercar_1sou_forward
-  //% block="前へ |%F_cm| ｃｍ進む" group="3　基本の動き"
-    export function plottercar_1sou_forward(F_cm: number): void {
-    moter_number= F_cm / (18.9*cond_Distance) * 512;
-    moter(moter_number,1,1);
+  //% color="#3943c6" weight=80　blockId=plottercar_zengo
+  //% block=" |%zengo|へ |%F_cm| ｃｍ進む" group="3　基本の動き"
+    export function plottercar_1sou_forward(zengo:plotter_houkou, F_cm: number): void {
+    switch (zengo) {
+        case plotter_houkou.前:
+        moter_number= F_cm / (18.9*cond_Distance) * 512;
+        moter(moter_number,1,1);
+        break;
+    
+        case plotter_houkou.後:
+        moter_number= F_cm / (18.9*cond_Distance) * 512;
+        moter(moter_number,2,2);
+        break;
+       }
     }
 
-
-  //% color="#3943c6" weight=78　blockId=plottercar_1sou_back
-  //% block="後ろへ |%F_cm| ｃｍ進む" group="3　基本の動き"
-    export function plottercar_1sou_back(F_cm: number): void {
-    moter_number= F_cm / (18.9*cond_Distance) * 512;
-    moter(moter_number,2,2);
-       }
-
-
   //% color="#3943c6" weight=76　blockId=plottercar_L_cycle
-  //% block="左回り　角度 |%L_degree| " group="3　基本の動き"
-  export function plottercar_L_cycle(L_degree: number): void {
-    moter_number= L_degree / 360 * 512 * con_kaiten*cond_degree;
+  //% block="|%RorL| 回り　角度 |%L_degree| " group="3　基本の動き"
+  export function plottercar_L_cycle(RorL:plotter_RL,  RL_degree: number): void {
+   switch (RorL){
+       case plotter_RL.左:
+    moter_number= RL_degree / 360 * 512 * con_kaiten*cond_degree;
     moter(moter_number,1,2);
-   }
- 
-  //% color="#3943c6" weight=74　blockId=plottercar_R_cycle
-  //% block="右回り　角度 |%R_degree| " group="3　基本の動き"
-  export function plottercar_R_cycle(R_degree: number): void {
-    moter_number= R_degree / 360 * 512 * con_kaiten*cond_degree;
+    break;
+    case plotter_RL.右:
+    moter_number= RL_degree / 360 * 512 * con_kaiten*cond_degree;
     moter(moter_number,2,1);
+    break;
   }
+  }
+
 
   //% color="#ff4940" weight=71　blockId=plottercar_rest
   //% block="停止状態（電流ＯＦＦ）" group="3　基本の動き"
@@ -460,7 +471,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 }
   //% color="#3943c6" weight=58　blockId=plottercar_L_step
   //% block="左車輪 |%L_step|ステップ |%houkou|方向" group="3　基本の動き"
-
   export function plottercar_L_step(L_step: number,houkou:plotter_houkou): void {
     moter_number= L_step;
         switch(houkou){
@@ -473,12 +483,17 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
 } 
 
+
+
+/*
+
+
   //% color="#009A00" weight=40　blockId=polygon
   //% block="多角形作図 |%digree_step| 角形　一辺の長さ |%Edge_Num| cm " group="4　図形"
   export function polygon(digree_step: number,Edge_Num:number): void {
 
     for (let index = 0; index < digree_step; index++) {
-        eureka_plotter_car.plottercar_1sou_forward(Edge_Num)
+        eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num)
         eureka_plotter_car.plottercar_L_cycle(360/digree_step)
      }
     plottercar_frest()
@@ -511,6 +526,11 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
                 return eureka_plotter_car.plottercar_L_cycle(45);
         }
     }
+
+
+*/
+
+
 
   //% color="#ffa800" weight=20　blockId=plotter_Distance
   //% block="進行距離調整(1→1/1000)  短く |%Dis| 長く" group="5 調整"
