@@ -506,7 +506,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
   //% color="#009A00" weight=40　blockId=polygon
-  //% block="多角形作図 |%digree_step| 角形　一辺の長さ |%Edge_Num|cm |%RorL|回り " group="4　図形"
+  //% block="多角形作図 |%digree_step| 角形　一辺の長さ |%Edge_Num|cm  |%RorL|回り " group="4　図形"
   export function polygon(digree_step: number,Edge_Num:number,RorL:plotter_RL): void {
       switch(RorL){
           case plotter_RL.右:
@@ -524,36 +524,45 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
        }
     }
 
-/*
+
   //% color="#009A00" weight=39　blockId=cycle
-  //% block="円の作図 直径 |%D_Num| cm " group="4　図形"
-  export function cycle(D_Num:number): void {
+  //% block="円の作図 直径 |%D_Num|cm  |%RorL|回り" group="4　図形"
+  export function cycle(D_Num:number,RorL:plotter_RL): void {
     let cir = D_Num * 3.14
     let Foward_D =  cir/ 30
-    for (let index = 0; index < 30; index++) {
-        eureka_plotter_car.plottercar_1sou_forward(Foward_D)
-        eureka_plotter_car.plottercar_R_cycle(360 / 30)
+      switch(RorL){
+          case plotter_RL.右:
+            for (let index = 0; index < 30; index++) {
+            eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Foward_D)
+            eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 360/30)
+            }
+
+          case plotter_RL.左:
+            for (let index = 0; index < 30; index++) {
+            eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Foward_D)
+            eureka_plotter_car.plottercar_RL_cycle(plotter_RL.左, 360/30)
+            }
+
     }
   }
-
 
   //% color="#3943c6" weight=72　blockId=plottercar_houkou
   //% block="ほうこうを変える |%muki| へ " group="3　基本の動き"
     export function plottercar_houkou(muki: houkou): void {
         switch(muki){
             case houkou.右:
-                return eureka_plotter_car.plottercar_R_cycle(90)
+                return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 90);
             case houkou.左:
-                return eureka_plotter_car.plottercar_L_cycle(90);
+                return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.左, 90);
             case houkou.ななめ右:
-                return eureka_plotter_car.plottercar_R_cycle(45);
+                return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 45);
             case houkou.ななめ左:
-                return eureka_plotter_car.plottercar_L_cycle(45);
+                return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.左, 45);
         }
     }
 
 
-*/
+
 
 
 
