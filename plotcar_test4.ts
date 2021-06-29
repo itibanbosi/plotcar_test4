@@ -49,8 +49,8 @@ enum neoLED_color {
 }
 
 enum kyori{
-    短い,
     長い,
+    短い,
 }
 enum sence_select{
     普通,
