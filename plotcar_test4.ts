@@ -185,7 +185,7 @@ let Stepping_L = [
 let moter_number=0;
 let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
 
-//% color="#3943c6" weight=95 block="ﾌﾟﾛｯﾀｰ・ｶｰVer1.71" icon="\uf1b9"
+//% color="#3943c6" weight=95 block="ﾌﾟﾛｯﾄ・ｶｰVer1.71" icon="\uf1b9"
 namespace eureka_plotter_car {
 
   //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
@@ -702,28 +702,7 @@ namespace newio_blocks {
   }
 
 
-  //% color="#a0522d" weight=36 block="iːo人が動いたら" group="2 iːo人感センサー"
-  export function IO_humanDetection(): boolean {
-        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
-        if (pins.digitalReadPin(DigitalPin.P14) == 1) {
-          return true;
-        } else {
-          return false;
-        }
-  }
- 
-  //% color="#a0522d" weight=34 blockId=IO_human block="iːo人感ｾﾝｻ値" group="2 iːo人感センサー"
-    export function IO_human(): number {
-        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
-        return pins.digitalReadPin(DigitalPin.P14);
-  }
 
-  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="iːo人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
-  export function IO_human_DISP() {
-
-    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
-       basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
-  }
 
   //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
   //% limit.min=0 limit.max=100
