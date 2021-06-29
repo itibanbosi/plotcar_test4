@@ -580,144 +580,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     cond_degree = (1+Deg/1000);
   }
 
-}
-
-//% color="#ff4500" weight=94 block="ﾌﾟﾛｯﾄｶｰ・LED"
-
-namespace newio_blocks {
-
-
-
-    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1 iːoネオピクセル"
-    export function neopixel_blue_block(mode: onoff) {
-    switch (mode) {
-      case  onoff.ON :
-        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
-        io_neo.show()
-        break;
-                
-      case onoff.OFF:
-         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
-        break;
-    }
-  }
-
-    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1 iːoネオピクセル"
-    export function neopixel_yellow_block(mode: onoff) {
-    switch (mode) {
-      case  onoff.ON :
-        io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
-        io_neo.show()
-        break;
-                
-      case onoff.OFF:
-         io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
-        break;
-    }
-  }
-
-    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1 iːoネオピクセル"
-    export function neopixel_red_block(mode: onoff) {
-    switch (mode) {
-      case  onoff.ON :
-        io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-        io_neo.show()
-        break;
-                
-      case onoff.OFF:
-         io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
-        break;
-    }
-  }
- 
-    //% color="#20b2aa" weight=82 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="1 iːoネオピクセル"
-    export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
-
-    switch (neo_color){
-        case neoLED_color.赤 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Red))            
-        } 
-        io_neo.show()
-        break;                
-        case neoLED_color.だいだい :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Orange))            
-        } 
-        io_neo.show()
-        break;    
-        case neoLED_color.黄 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Yellow))            
-        } 
-        io_neo.show()
-        break;                
-        case neoLED_color.緑 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Green))            
-        } 
-        io_neo.show()
-        break;
-        case neoLED_color.青 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Blue))            
-        } 
-        io_neo.show()
-        break;                
-        case neoLED_color.あい :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Indigo))            
-        } 
-        io_neo.show()
-        break;
-        case neoLED_color.すみれ :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Violet))            
-        } 
-        io_neo.show()
-        break;                
-        case neoLED_color.紫 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Purple))            
-        } 
-        io_neo.show()
-        break;
-        case neoLED_color.白 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.White))            
-        } 
-        io_neo.show()
-        break;                
-        case neoLED_color.黒 :
-        for (let n=0 ; n < neo_number;n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
-        } 
-        io_neo.show()
-        break;
-    }
-  }
-
-    //% color="#cd853f" weight=80 blockId=neopixel_erace block="ﾌﾙｶﾗｰLEDを全部消す" group="1 iːoネオピクセル"
-    export function neopixel_erace_block() {
-        for (let n=0 ; n < 4 ; n++){
-        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
-        } 
-        io_neo.show()
-    }
-
-
-
-  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1 iːoネオピクセル"
-  //% second.min=0 second.max=10
-  export function driveForwards(second: number): void {
-    basic.pause(second * 1000);
-  }
-
-
-
 
   //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
   //% limit.min=0 limit.max=100
@@ -952,5 +814,101 @@ namespace newio_blocks {
             }
         break;
     }
+
+
+
+}
+
+//% color="#ff4500" weight=94 block="ﾌﾟﾛｯﾄｶｰ・LED"
+
+namespace newio_blocks {
+
+ 
+    //% color="#20b2aa" weight=82 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="ﾌﾟﾛｯﾄｶｰLED"
+    export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
+
+    switch (neo_color){
+        case neoLED_color.赤 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Red))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.だいだい :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Orange))            
+        } 
+        io_neo.show()
+        break;    
+        case neoLED_color.黄 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Yellow))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.緑 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Green))            
+        } 
+        io_neo.show()
+        break;
+        case neoLED_color.青 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Blue))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.あい :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Indigo))            
+        } 
+        io_neo.show()
+        break;
+        case neoLED_color.すみれ :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Violet))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.紫 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Purple))            
+        } 
+        io_neo.show()
+        break;
+        case neoLED_color.白 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.White))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.黒 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
+        } 
+        io_neo.show()
+        break;
+    }
+  }
+
+    //% color="#cd853f" weight=80 blockId=neopixel_erace block="ﾌﾙｶﾗｰLEDを全部消す" group="ﾌﾟﾛｯﾄｶｰLED"
+    export function neopixel_erace_block() {
+        for (let n=0 ; n < 4 ; n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
+        } 
+        io_neo.show()
+    }
+
+
+
+  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="ﾌﾟﾛｯﾄｶｰLED"
+  //% second.min=0 second.max=10
+  export function driveForwards(second: number): void {
+    basic.pause(second * 1000);
+  }
+
+
+
+
 }
 
