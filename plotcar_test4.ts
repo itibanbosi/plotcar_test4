@@ -30,8 +30,8 @@ enum microbit_LED {
 }
 
 enum houkou {
-    右,
-    左,
+    右へ直角,
+    左へ直角,
     ななめ右,
     ななめ左,
 }
@@ -550,9 +550,9 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   //% block="ほうこうを変える |%muki| へ " group="3　基本の動き"
     export function plottercar_houkou(muki: houkou): void {
         switch(muki){
-            case houkou.右:
+            case houkou.右へ直角:
                 return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 90);
-            case houkou.左:
+            case houkou.左へ直角:
                 return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.左, 90);
             case houkou.ななめ右:
                 return eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 45);
