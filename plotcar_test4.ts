@@ -504,7 +504,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
 
-/*
+
 
 
   //% color="#009A00" weight=40　blockId=polygon
@@ -512,16 +512,13 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   export function polygon(digree_step: number,Edge_Num:number): void {
 
     for (let index = 0; index < digree_step; index++) {
-        eureka_plotter_car.plottercar_1sou_forward(plotter_houkou.前, 5)
-
-
-        eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num)
-        eureka_plotter_car.plottercar_L_cycle(360/digree_step)
+        eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num )
+        eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 360/digree_step)
      }
     plottercar_frest()
     }
 
-
+/*
   //% color="#009A00" weight=39　blockId=cycle
   //% block="円の作図 直径 |%D_Num| cm " group="4　図形"
   export function cycle(D_Num:number): void {
