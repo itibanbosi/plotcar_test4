@@ -185,20 +185,18 @@ let Stepping_L = [
 let moter_number=0;
 let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
 
-//% color="#3943c6" weight=95 block="ﾌﾟﾛｯﾄ・ｶｰVer1.71" icon="\uf1b9"
+
+//% color="#3943c6" block="ﾌﾟﾛｯﾀｰ・ｶｰVer1.6" icon="\uf1b9"
 namespace eureka_plotter_car {
 
   //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
   export function microbit_version_info(Version_info : microbit_version) {
-    led.enable(false);
-    pins.digitalWritePin(DigitalPin.P3, 1);
-    pins.digitalWritePin(DigitalPin.P13, 1);
     switch(Version_info){
         case microbit_version.Version1:
-        microbit_wait=750;
+        microbit_wait=800;
         break;
         case microbit_version.Version2:
-        microbit_wait=3300;
+        microbit_wait=5000;
         break;
         case microbit_version.Test_A:
         microbit_wait=10000;
@@ -217,13 +215,13 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /* 端数の計算計算  */
 
     let kyori_hasuu=kyori%1;
-/*    serial.writeValue("kyori_hasuu", kyori_hasuu);  */
+    serial.writeValue("kyori_hasuu", kyori_hasuu);
     let kyori_seisuu=Math.floor(kyori);
 /*    serial.writeValue("kyori_seisuu", kyori_seisuu);*/
 
 
   /* 前回の動作との比較と処理  */
- /*  serial.writeValue("1Tugi_L", Tugi_L);*/
+   serial.writeValue("1Tugi_L", Tugi_L);
     if (PremotionR == R_zengo){ 
         Tugi_R=Tugi_R+1;
     }
@@ -327,8 +325,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
     /*  バックラッシュの処理　右車輪 */ 
     if (PremotionR != R_zengo){ 
-    music.playTone(988, music.beat(BeatFraction.Sixteenth));    
-    for (let index = 0; index < 5; index++) {
+    music.playTone(523, music.beat(BeatFraction.Sixteenth))
+    for (let index = 0; index < 3; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
@@ -346,8 +344,8 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
     /*  バックラッシュの処理　左車輪 */ 
     if (PremotionL != L_zengo){ 
-    music.playTone(523, music.beat(BeatFraction.Sixteenth));
-    for (let index = 0; index < 5; index++) {
+    music.playTone(523, music.beat(BeatFraction.Sixteenth))
+    for (let index = 0; index < 3; index++) {
     let Data1=0;
     while ( Data1 < 4){
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
@@ -366,16 +364,15 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     /*  整数部の処理　 */ 
     for (let index = 0; index < kyori_seisuu; index++) {
     let Data1=0;
-    let pin = [DigitalPin.P3,DigitalPin.P4,DigitalPin.P6,DigitalPin.P7]
     while ( Data1 < 4){
 
-      pins.digitalWritePin(pin[0], Stepping_R[Data1][0]);
+      pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
-      pins.digitalWritePin(pin[1], Stepping_R[Data1][1]);
+      pins.digitalWritePin(DigitalPin.P4, Stepping_R[Data1][1]);
       pins.digitalWritePin(DigitalPin.P14, Stepping_L[Data1][1]);
-      pins.digitalWritePin(pin[2], Stepping_R[Data1][2]);
+      pins.digitalWritePin(DigitalPin.P6, Stepping_R[Data1][2]);
       pins.digitalWritePin(DigitalPin.P15, Stepping_L[Data1][2]);
-      pins.digitalWritePin(pin[3], Stepping_R[Data1][3]);
+      pins.digitalWritePin(DigitalPin.P7, Stepping_R[Data1][3]);
       pins.digitalWritePin(DigitalPin.P16, Stepping_L[Data1][3]);
       Data1=Data1+1;
       for (i = 0; i < microbit_wait; i++);
@@ -388,7 +385,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 　  let Step_number=Math.floor(kyori_hasuu*10/2.5);
     let Data1=0;
     while ( Data1 < Step_number){
-/*      serial.writeValue("Data1", Data1);  */
+      serial.writeValue("Data1", Data1);
       pins.digitalWritePin(DigitalPin.P3, Stepping_R[Data1][0]);
       pins.digitalWritePin(DigitalPin.P13, Stepping_L[Data1][0]);
       pins.digitalWritePin(DigitalPin.P4, Stepping_R[Data1][1]);
@@ -434,6 +431,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
       basic.pause(100);
     }
   }
+
 
   //% color="#3943c6" weight=80　blockId=plottercar_zengo
   //% block=" |%zengo|へ |%F_cm| ｃｍ進む" group="3　基本の動き"
