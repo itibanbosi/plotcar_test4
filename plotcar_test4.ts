@@ -720,14 +720,14 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
     switch(wb){
         case whiteblack.黒:
-            if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > sikii && (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < sikii) {
+            if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 > sikii && (pins.analogReadPin(AnalogPin.P10) / 1023) * 100 < sikii) {
             return true;
             } else {
             return false;
             }
         break;
         case whiteblack.白:
-            if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < sikii && (pins.analogReadPin(AnalogPin.P2) / 1023) * 100 > sikii) {
+            if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < sikii && (pins.analogReadPin(AnalogPin.P10) / 1023) * 100 > sikii) {
             return true;
             } else {
             return false;
