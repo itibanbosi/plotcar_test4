@@ -185,7 +185,7 @@ let Stepping_L = [
 let moter_number=0;
 let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
 
-//% color="#3943c6" block="ﾌﾟﾛｯﾀｰ・ｶｰVer1.71" icon="\uf1b9"
+//% color="#3943c6" weight=95 block="ﾌﾟﾛｯﾀｰ・ｶｰVer1.71" icon="\uf1b9"
 namespace eureka_plotter_car {
 
   //% color="#ff3d03" weight=90 blockId=Microbit_Version_info block="ﾏｲｸﾛﾋﾞｯﾄのバージョンを設定する |%Version_info| にする" group="1 初期設定"
@@ -567,7 +567,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 }
 
-//% color="#ff4500" weight=94 block="iːo(ｲｰｵ)専用"
+//% color="#ff4500" weight=94 block="ﾌﾟﾛｯﾄｶｰ・LED"
 
 namespace newio_blocks {
 
