@@ -506,14 +506,22 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
   //% color="#009A00" weight=40　blockId=polygon
-  //% block="多角形作図 |%digree_step| 角形　一辺の長さ |%Edge_Num| cm " group="4　図形"
-  export function polygon(digree_step: number,Edge_Num:number): void {
-
-    for (let index = 0; index < digree_step; index++) {
-        eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num )
-        eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 360/digree_step)
-     }
-    plottercar_frest()
+  //% block="多角形作図 |%digree_step| 角形　一辺の長さ |%Edge_Num| cm |%RorL|" group="4　図形"
+  export function polygon(digree_step: number,Edge_Num:number,RorL:plotter_RL): void {
+      switch(RorL){
+          case plotter_RL.右:
+            for (let index = 0; index < digree_step; index++) {
+            eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num )
+            eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 360/digree_step)
+            }
+            break;
+        case plotter_RL.左:
+            for (let index = 0; index < digree_step; index++) {
+            eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Edge_Num )
+            eureka_plotter_car.plottercar_RL_cycle(plotter_RL.左, 360/digree_step)
+            }
+            break;
+       }
     }
 
 /*
