@@ -591,34 +591,6 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   }
 
 
-  //% color="#009A00"  weight=19 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="8 microbitの光ｾﾝｻ"
-  //% limit.min=0 limit.max=100
-  //% advanced=true
-  export function microbit2_decideLight(limit: number) :boolean{
-        if (input.lightLevel()/254*100  < limit) {            
-          return true;
-        } else {
-          return false;
-        }
-   }
-
-
-
-  //% color="#009A00"  weight=17 blockId=microbit2_denkitemp block="m:bit光ｾﾝｻ値" group="8 microbitの光ｾﾝｻ"
-  //% advanced=true
-  export function microbit2_denkitemp():number{
-
-        return Math.round(input.lightLevel()/254*100);
-
-  }
-
-
-  //% color="#228b22"  weight=16 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値を表示する" group="8 microbitの光ｾﾝｻ"
-  //% advanced=true
-  export function microbit2_denkiLED(){
-            basic.showNumber(Math.round(input.lightLevel()/254*100));
-  }
-
 
 
 
@@ -839,6 +811,38 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
 
   }
+
+  //% color="#009A00"  weight=19 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="8 microbitの光ｾﾝｻ"
+  //% limit.min=0 limit.max=100
+  //% advanced=true
+  export function microbit2_decideLight(limit: number) :boolean{
+        if (input.lightLevel()/254*100  < limit) {            
+          return true;
+        } else {
+          return false;
+        }
+   }
+
+
+
+  //% color="#009A00"  weight=17 blockId=microbit2_denkitemp block="m:bit光ｾﾝｻ値" group="8 microbitの光ｾﾝｻ"
+  //% advanced=true
+  export function microbit2_denkitemp():number{
+
+        return Math.round(input.lightLevel()/254*100);
+
+  }
+
+
+  //% color="#228b22"  weight=16 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値を表示する" group="8 microbitの光ｾﾝｻ"
+  //% advanced=true
+  export function microbit2_denkiLED(){
+            basic.showNumber(Math.round(input.lightLevel()/254*100));
+  }
+
+
+
+
 
 }
 
