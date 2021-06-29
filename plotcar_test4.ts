@@ -702,7 +702,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
   }
 
-//% color="#6041f1"  weight=23 block="右だけが |%wb| をふんだ時 しきい値 |%sikii| " group="4　センサー" group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ"
+//% color="#6041f1"  weight=33 block="右だけが |%wb| をふんだ時 しきい値 |%sikii| " group="4　センサー" group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ"
 //% sence.min=10 sence.max=40
 //% advanced=true
   export function photo_R_out( wb: whiteblack,sikii:sence_select): boolean {
@@ -736,7 +736,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
     }
   }
 
-  //% color="#6041f1"  weight=24 block="左だけが |%wb| をふんだ時 しきい値 |%sikii| " group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ" 
+  //% color="#6041f1"  weight=34 block="左だけが |%wb| をふんだ時 しきい値 |%sikii| " group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ" 
   //% advanced=true
   export function photo_L_out( wb: whiteblack ,sikii:sence_select): boolean {
 　  if (sikii==sence_select.低感度)
@@ -771,7 +771,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         break;
     }
   }
-  //% color="#6041f1"  weight=25 block="左右とも |%wb| をふんでいる時 しきい値 |%sikii| " group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ"
+  //% color="#6041f1"  weight=35 block="左右とも |%wb| をふんでいる時 しきい値 |%sikii| " group="7 ﾌｫﾄﾘﾌﾚｸﾀｰ"
   //% advanced=true
   export function photo_LR_out(wb: whiteblack,sikii:sence_select): boolean {
 　  if (sikii==sence_select.低感度)
