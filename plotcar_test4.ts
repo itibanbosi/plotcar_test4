@@ -618,7 +618,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   }
 
 
-  //% color="#009A00" weight=21 blockId=sonar_ping_LED block="きょりを表示する" group="6 超音波きょりｾﾝｻｰ"
+  //% color="#009A00" weight=21 blockId=sonar_ping_LED block="きょりを表示（確認のみ）" group="6 超音波きょりｾﾝｻｰ"
   //% advanced=true
   export function sonar_ping_LED() { 
     basic.showNumber(sonar_ping_2());
@@ -834,7 +834,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
   }
 
 
-  //% color="#228b22"  weight=16 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値を表示する" group="8 microbitの光ｾﾝｻ"
+  //% color="#228b22"  weight=16 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値表示（確認のみ）" group="8 microbitの光ｾﾝｻ"
   //% advanced=true
   export function microbit2_denkiLED(){
             basic.showNumber(Math.round(input.lightLevel()/254*100));
