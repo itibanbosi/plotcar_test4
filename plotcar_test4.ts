@@ -546,7 +546,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
             eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Foward_D)
             eureka_plotter_car.plottercar_RL_cycle(plotter_RL.右, 360/30)
             }
-
+            break;
           case plotter_RL.左:
             for (let index = 0; index < 30; index++) {
             eureka_plotter_car.plottercar_zengo(plotter_houkou.前,Foward_D)
