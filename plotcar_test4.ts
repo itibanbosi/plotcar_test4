@@ -629,7 +629,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
 
-  //% color="#009A00" weight=20 block="きょりが |%limit| cmより |%nagasa| " group="6 超音波きょりｾﾝｻｰ"
+  //% color="#009A00" weight=30 block="きょりが |%limit| cmより |%nagasa| " group="6 超音波きょりｾﾝｻｰ"
   //% limit.min=0 limit.max=30
   //% advanced=true
   export function sonar_ping_3(limit: number ,nagasa:kyori): boolean {
