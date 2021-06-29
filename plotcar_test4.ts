@@ -48,8 +48,15 @@ enum neoLED_color {
     黒,
 }
 
-
-
+enum kyori{
+    短い,
+    長い,
+}
+enum sence_select{
+    普通,
+    高感度,
+    低感度,
+}
 enum microbit_version {
     Version1,
     Version2,
@@ -61,7 +68,10 @@ enum onoff {
   ON,
   OFF,
 }
-
+enum whiteblack{
+黒,
+白,
+}
 
 let cond_Distance=1;
 let cond_degree=1;
@@ -608,7 +618,7 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
 
 
 
-}
+
 
   //% color="#009A00" weight=22 blockId=sonar_ping_2 block="きょりｾﾝｻ" group="3 超音波きょりｾﾝｻｰ"
   export function sonar_ping_2() :number{
@@ -815,13 +825,13 @@ function  moter(kyori:number,R_zengo:number,L_zengo:number){
         break;
     }
 
-
+  }
 
 }
 
 //% color="#ff4500" weight=94 block="ﾌﾟﾛｯﾄｶｰ・LED"
 
-namespace newio_blocks {
+namespace plotLED_blocks {
 
  
     //% color="#20b2aa" weight=82 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="ﾌﾟﾛｯﾄｶｰLED"
