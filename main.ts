@@ -1,3 +1,9 @@
-basic.forever(function () {
-	
-})
+led.enable(false)
+pins.digitalWritePin(DigitalPin.P3, 0)
+pins.digitalWritePin(DigitalPin.P4, 0)
+pins.digitalWritePin(DigitalPin.P6, 0)
+pins.digitalWritePin(DigitalPin.P7, 0)
+pins.digitalWritePin(DigitalPin.P13, 0)
+pins.digitalWritePin(DigitalPin.P14, 0)
+pins.digitalWritePin(DigitalPin.P15, 0)
+pins.digitalWritePin(DigitalPin.P16, 0)
